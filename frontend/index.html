@@ -1,1 +1,44 @@
-plik startowy aplikacji
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body>
+	<section class="todo">
+		<header class="todo__header">
+			<h1 class="todo__title">ToDo List</h1>
+		</header>
+		<ul class="task-list">
+
+			<li class="task-list__item">
+				<div class="task-list__checkbox">
+					<input class="task-list__complete" type="checkbox" id="task__complete" name="task__complete">
+					<label class="task-list__label" for="task__complete">Mark task as complete</label>
+				</div>
+				<h2 class="task-list__title">Make a new post about...</h2>
+				<button class="task-list__delete">X</button>
+			</li>
+
+			<li class="task-list__item">
+				<div class="task-list__checkbox">
+					<input class="task-list__complete" type="checkbox" id="task__complete" name="task__complete">
+					<label class="task-list__label" for="task__complete">Mark task as complete</label>
+				</div>
+				<h2 class="task-list__title">Publish the new post</h2>
+				<button class="task-list__delete">X</button>
+			</li>
+
+			<li class="task-list__add-new">
+				<button class="task-list__add-btn"></button>
+				<h2 class="task-list__input">...</h2>
+			</li>
+
+		</ul>
+	</section>
+</body>
+</html>
