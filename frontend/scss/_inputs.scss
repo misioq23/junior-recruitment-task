@@ -1,0 +1,31 @@
+.todo__checkbox {
+	position: relative;
+	appearance: none;
+	margin: 0;
+	width: 1em;
+	height: 1em;
+	background: transparent;
+	border: $checkbox--border 1px solid;
+	&::after {
+		content: '';
+		position: absolute;
+		display: none;
+		left: .25em;
+		top: 0;
+		width: .4em;
+		height: .8em;
+		border: solid #a8bd44;
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+	}
+	&:checked::after {
+		display: block;
+	}
+}
+
+.todo__checkbox-label {
+	// label need to stay for disabled users
+	position: absolute;
+   	top: -9999px;
+   	left: -9999px;
+}

@@ -1,7 +1,22 @@
-$color--primary: #2e3641;
-$color--secondary: #dae4eb;
+$todo--bg: #e9f0f4;
 
-$first-line--width: 4rem;
-$second-line--width: 4.5rem;
+$todo__header--bg: #2e3641;
+$todo__header--text: #dae4eb;
+$todo__header--inner-border: #454f5c;
 
-$headers__indent: $first-line--width/2;
+$todo__list--bg: #fff;
+$todo__list--border: #dbdbdb;
+$todo__list--inner-border: #f2e3df;
+
+$todo__task--text-active: #2e3641;
+$todo__task--text-inactive: #9eb2c0;
+$todo__task--border: #e6ebed;
+
+$checkbox--border: #dae4eb;
+$checkbox--mark: #a8bd44;
+
+$first-line--width: 3rem;
+$second-line--width: 3.5rem;
+
+$indent: 1.75rem;
+$row__padding: .75em;

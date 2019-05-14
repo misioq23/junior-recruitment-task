@@ -1,82 +1,63 @@
-.task-list {
-	border: #dbdbdb 1px solid;
-	border-top: none;
+.todo__list {
+	position: relative;
 	margin: 0;
 	padding: 0;
+	border: $todo__list--border 1px solid;
+	border-top: none;
+	background: $todo__list--bg;
 	list-style: none;
-	position: relative;
 	&::before,
 	&::after {
 		content: '';
 		position: absolute;
 		top: 0;
-		
-		background: transparent;
 		height: 100%;
-		border-right: #f2e3df 1px solid;
+		border-right: $todo__list--inner-border 1px solid;
 	}
 	&::before {
 		left: $first-line--width;
-		z-index: 1000;
+		z-index: 10;
 	}
 	&::after{
 		left: $second-line--width;
 	}
 }
 
-.task-list__item {
+.todo__task {
 	position: relative;
 	display: flex;
-	// justify-content: space-between;
 	align-items: center;
-	border-bottom: #e6ebed 1px solid;
+	// padding-right: $indent; // for trash icon
+	border-bottom: $todo__task--border 1px solid;
+	color: $todo__task--text-active;
+	fill: $todo__task--text-active;
 }
 
-.task-list__checkbox {
+.todo__task--inactive {
+	color: $todo__task--text-inactive;
+	fill: $todo__task--text-inactive;
+	text-decoration: line-through;
+}
+
+.todo__task-complete {
 	width: $first-line--width;
-	height: 100%;
 	text-align: center;
 }
 
-.task-list__complete {
-	position: relative;
-	appearance: none;
+.todo__task-name {
+	$padding: 1em;
 	margin: 0;
-	width: 1em;
-	height: 1em;
-	background: transparent;
-	border: #dae4eb 1px solid;
-	&::after {
-		content: '';
-		position: absolute;
-		display: none;
-		left: .25em;
-		top: 0;
-		width: .4em;
-		height: .8em;
-		border: solid #a8bd44;
-		border-width: 0 2px 2px 0;
-		transform: rotate(45deg);
-	}
-	&:checked::after {
-		display: block;
-	}
+	padding: $padding 0 $padding $indent;
+	font-size: 1em;
 }
-
-.task-list__label {
-	// label need to stay for disabled users
-	position: absolute;
-   	top: -9999px;
-   	left: -9999px;
+.todo__task-del {
+	margin-left: auto;
 }
-
-.task-list__title {
-	padding-left: $headers__indent;
-	color: #2e3641;
-	line-height: 1;
-	font-size: 16px;
-}
-
-.task-list__delete {
-	width: 2em;
+.todo__task-del svg {
+	$padding: .75em;
+	$size: 1.3em + $padding*2;
+	display: block;
+	width: $size;
+	height: $size;
+	padding: $padding;
 }
