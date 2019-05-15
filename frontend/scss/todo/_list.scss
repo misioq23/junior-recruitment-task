@@ -54,10 +54,9 @@
 }
 
 .todo__task-del {
-	$padding: $headers__padding + .5em;
 	// margin-left: auto - hack to align element right
 	margin: 0 $indent/2 0 auto;
-	padding: $padding;
+	padding: $no-text__padding;
 	background: url(../img/trash.svg) no-repeat center;
 	background-size: 45%;
 	cursor: pointer;
