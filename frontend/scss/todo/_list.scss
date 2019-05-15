@@ -51,9 +51,9 @@
 	appearance: none;
 	display: block;
 	margin: 0 auto;
-	width: 1em;
-	height: 1em;
-	border: $checkbox--border 1px solid;
+	width: .7em;
+	height: .7em;
+	border: $checkbox--border $border--width solid;
 	font-size: 1em;
 	line-height: 1;
 	&::after {
@@ -62,8 +62,8 @@
 		display: none;
 		top: 0;
 		left: 27%;
-		width: .4em;
-		height: .8em;
+		width: .25em;
+		height: .45em;
 		border: solid #a8bd44;
 		border-width: 0 .125em .125em 0;
 		transform: rotate(45deg);
