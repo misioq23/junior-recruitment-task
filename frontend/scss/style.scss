@@ -1,7 +1,4 @@
 @import './base';
-@import './border_box';
-@import './global';
-@import './todo';
-@import './task';
-@import './new';
-@import './inputs';
+@import './global/border_box';
+@import './global/global';
+@import './todo/todo';

@@ -1,3 +1,4 @@
+// Color variables
 $todo--bg: #e9f0f4;
 
 $todo__header--bg: #2e3641;
@@ -15,9 +16,10 @@ $todo__task--border: #e6ebed;
 $checkbox--border: #dae4eb;
 $checkbox--mark: #a8bd44;
 
-$first-line--width: 3em;
-$second-line--width: 3.5em;
+// Global sizes
+$first-line--width: 2.35rem;
+$second-line--width: 2.65rem;
 
-$border--width: 0.075em;
-$indent: .75rem;
+$border--width: .075em;
+$indent: 1rem;
 $row__padding: .7em;

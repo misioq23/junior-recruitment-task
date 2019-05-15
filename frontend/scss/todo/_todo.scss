@@ -1,0 +1,10 @@
+.todo {
+	margin: 3.5em auto;
+	max-width: 26.6em;
+	font-family: 'Lato', sans-serif;
+}
+
+@import './header';
+@import './task';
+@import './new';
+@import './inputs';

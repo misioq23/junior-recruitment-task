@@ -1,17 +1,11 @@
-.todo {
-	margin: 3.5em auto;
-	max-width: 26.8em;
-	font-family: 'Lato', sans-serif;
-}
-
 .todo__header {
 	position: relative;
+	padding-left: $first-line--width;
 	border-color: $todo__header--bg;
 	border-style: solid;
 	border-width: 0 $border--width;
 	background: $todo__header--bg;	
 	color: $todo__header--text;
-	padding-left: $first-line--width;
 	&::before,
 	&::after {
 		content: '';
@@ -29,8 +23,8 @@
 }
 
 .todo__title {
-	$padding: $row__padding;
-	padding: $padding 0 $padding $indent;
+	padding: .7em $indent;
+	line-height: 1.25;
 	font-size: 1.16em;
 	font-weight: 700;
 }
