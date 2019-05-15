@@ -24,10 +24,3 @@
 		display: block;
 	}
 }
-
-.todo__label--hide {
-	// label need to stay for disabled users
-	position: absolute;
-   	top: -9999px;
-   	left: -9999px;
-}

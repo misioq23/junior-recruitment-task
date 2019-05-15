@@ -4,7 +4,14 @@
 	font-family: 'Lato', sans-serif;
 }
 
+.todo__hidden {
+	// for screen readers
+	position: absolute;
+   	top: -9999px;
+   	left: -9999px;
+}
+
 @import './header';
-@import './task';
+@import './list';
 @import './new';
 @import './inputs';
