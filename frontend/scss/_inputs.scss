@@ -1,21 +1,23 @@
 .todo__checkbox {
 	position: relative;
 	appearance: none;
-	margin: 0;
+	display: block;
+	margin: 0 auto;
 	width: 1em;
 	height: 1em;
-	background: transparent;
 	border: $checkbox--border 1px solid;
+	font-size: 1em;
+	line-height: 1;
 	&::after {
 		content: '';
 		position: absolute;
 		display: none;
-		left: .25em;
+		left: 27%;
 		top: 0;
 		width: .4em;
 		height: .8em;
 		border: solid #a8bd44;
-		border-width: 0 2px 2px 0;
+		border-width: 0 .125em .125em 0;
 		transform: rotate(45deg);
 	}
 	&:checked::after {
@@ -23,7 +25,7 @@
 	}
 }
 
-.todo__checkbox-label {
+.todo__label--hide {
 	// label need to stay for disabled users
 	position: absolute;
    	top: -9999px;

@@ -2,17 +2,20 @@
 	position: relative;
 	margin: 0;
 	padding: 0;
-	border: $todo__list--border 1px solid;
+	border: $todo__list--border $border--width solid;
 	border-top: none;
 	background: $todo__list--bg;
 	list-style: none;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1;
 	&::before,
 	&::after {
 		content: '';
 		position: absolute;
 		top: 0;
 		height: 100%;
-		border-right: $todo__list--inner-border 1px solid;
+		border-right: $todo__list--inner-border $border--width solid;
 	}
 	&::before {
 		left: $first-line--width;
@@ -24,22 +27,23 @@
 }
 
 .todo__task {
-	position: relative;
 	display: flex;
 	align-items: center;
-	// padding-right: $indent; // for trash icon
-	border-bottom: $todo__task--border 1px solid;
+	border-bottom: $todo__task--border $border--width solid;
 	color: $todo__task--text-active;
 	fill: $todo__task--text-active;
 }
 
-.todo__task--inactive {
+.todo__task--complete {
 	color: $todo__task--text-inactive;
 	fill: $todo__task--text-inactive;
 	text-decoration: line-through;
+	.todo__task-del {
+		background: url(../img/trash-complete.svg);
+	}
 }
 
-.todo__task-complete {
+.todo__task-action {
 	width: $first-line--width;
 	text-align: center;
 }
@@ -48,16 +52,36 @@
 	$padding: 1em;
 	margin: 0;
 	padding: $padding 0 $padding $indent;
-	font-size: 1em;
+	font: inherit;
 }
+
 .todo__task-del {
-	margin-left: auto;
-}
-.todo__task-del svg {
-	$padding: .75em;
-	$size: 1.3em + $padding*2;
-	display: block;
-	width: $size;
-	height: $size;
+	$padding: 1.5em;
+	margin: 0 $indent/2 0 auto;
+	cursor: pointer;
 	padding: $padding;
+	background: url(../img/trash.svg);
+	background-size: 40%;
+	background-position: center;
+	background-repeat: no-repeat;
+	& span {
+	   	position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
 }
+
+.todo__task--complete .todo__task-del {
+	background: url(../img/trash-complete.svg);
+	background-size: 40%;
+	background-position: center;
+	background-repeat: no-repeat; 
+}
+
+// .todo__task-del {
+// 	$size: 1.1em + $padding*2;
+// 	display: block;
+// 	width: $size;
+// 	height: $size;
+	
+// }
