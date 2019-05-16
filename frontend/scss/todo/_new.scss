@@ -4,11 +4,11 @@
 	color: $todo__task--text-active;
 }
 
-.todo__task-add {
+.todo__add-btn {
 	min-width: $first-line--width;
 }
 
-.todo__add-img {
+.todo__btn-img {
 	display: block;
 	margin: 0 auto;
 	padding: $headers__padding+0.15em 0;
