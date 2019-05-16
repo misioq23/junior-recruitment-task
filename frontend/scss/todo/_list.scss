@@ -80,7 +80,7 @@
 	font: inherit;
 }
 
-.todo__task-del {
+.todo__del-btn {
 	// margin-left: auto - hack to align element right
 	margin: 0 $indent/2 0 auto;
 	padding: $no-text__padding;
@@ -89,7 +89,7 @@
 	cursor: pointer;
 }
 
-.todo__task--complete .todo__task-del {
+.todo__task--complete .todo__del-btn {
 	background: url(../img/trash-complete.svg)  no-repeat center;
 	background-size: 45%;
 }
