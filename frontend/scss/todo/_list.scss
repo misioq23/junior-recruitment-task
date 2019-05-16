@@ -3,11 +3,11 @@
 	margin: 0;
 	padding: 0;
 	border: $todo__list--border $border--width solid;
-	border-top: 0;
+	border-width: 0 $border--width;
 	background: $todo__list--bg;
 	list-style: none;
 	line-height: 1;
-	font-size: 1em;
+	font-size: $font--size;
 	font-weight: 400;
 	&::before,
 	&::after {
@@ -19,7 +19,6 @@
 	}
 	&::before {
 		left: $first-line--width;
-		z-index: 10;
 	}
 	&::after{
 		left: $second-line--width;
@@ -51,10 +50,10 @@
 	appearance: none;
 	display: block;
 	margin: 0 auto;
-	width: .7em;
-	height: .7em;
+	width: $action__elements--size;
+	height: $action__elements--size;
 	border: $checkbox--border $border--width solid;
-	font-size: 1em;
+	font-size: $font--size;
 	line-height: 1;
 	&::after {
 		content: '';
@@ -81,7 +80,7 @@
 }
 
 .todo__del-btn {
-	// margin-left: auto - hack to align element right
+	// auto on margin left - hack to align element right
 	margin: 0 $indent/2 0 auto;
 	padding: $no-text__padding;
 	background: url(../img/trash.svg) no-repeat center;

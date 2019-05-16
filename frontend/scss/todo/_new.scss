@@ -1,19 +1,38 @@
 .todo__new {
+	position: relative;
 	display: flex;
 	align-items: center;
+	border: $todo__list--border $border--width solid;
+	border-top: 0;
+	background: $todo__list--bg;
 	color: $todo__task--text-active;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		height: 100%;
+		border-right: $todo__list--inner-border $border--width solid;
+	}
+	&::before {
+		left: $first-line--width;
+	}
+	&::after{
+		left: $second-line--width;
+	}
 }
 
 .todo__add-btn {
-	min-width: $first-line--width;
+	// To make sure the btn's width and height will be the same like lists 
+	padding: $headers__padding + ($font--size - $action__elements--size)/2;
 	cursor: pointer;
 }
 
 .todo__btn-img {
 	display: block;
 	margin: 0 auto;
-	padding: $headers__padding+0.15em 0;
-	width: .7em;
+	width: $action__elements--size;
+	height: $action__elements--size;
 	fill: $todo__task--text-inactive;
 }
 

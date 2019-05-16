@@ -17,10 +17,14 @@ $checkbox--border: #dae4eb;
 $checkbox--mark: #a8bd44;
 
 // Global sizes
-$first-line--width: 2.35rem;
-$second-line--width: 2.65rem;
-
+$font--size: 1em;
 $border--width: .075em;
+
+$first-line--width: 2.35em;
+$second-line--width: 2.65em;
+
 $indent: 1rem;
 $headers__padding: .7em;
-$no-text__padding: $headers__padding + 1em/2;
+
+$no-text__padding: $headers__padding + $font--size/2;
+$action__elements--size: .7em;
