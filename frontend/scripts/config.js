@@ -8,4 +8,9 @@ const elementStrings = {
 	delBtn: 'todo__del-btn',
 	addBtn: 'todo__add-btn',
 };
-export { elements, elementStrings };
+
+const setup = {
+	proxy: 'https://cors-anywhere.herokuapp.com/',
+	dataBaseUrl: 'http://localhost:3000',
+};
+export { elements, elementStrings, setup };
