@@ -7,7 +7,7 @@ import config from '../config';
 
 // rollup.config.js
 export default {
-	input: config.src.js + 'index.js',
+	input: 'frontend/scripts/index.js',
 	plugins: [
 		replace({
 			'process.env.NODE_ENV': '"production"',
