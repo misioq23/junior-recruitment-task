@@ -4,7 +4,8 @@ const elements = {
 	addInput: document.querySelector('.todo__task-input'),
 };
 const elementStrings = {
-	trash: 'todo__del-btn',
 	complete: 'todo__task-checkbox',
+	delBtn: 'todo__del-btn',
+	addBtn: 'todo__add-btn',
 };
 export { elements, elementStrings };
