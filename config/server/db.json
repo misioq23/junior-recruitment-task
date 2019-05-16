@@ -1,11 +1,11 @@
 {
 	"todos": {
 		"todos": [
-			{"ID":340,"Content":"z","Finished":"0","Sort":"0"},
-			{"ID":334,"Content":"b","Finished":"0","Sort":"1"},
-			{"ID":335,"Content":"c","Finished":"0","Sort":"2"},
-			{"ID":338,"Content":"x","Finished":"0","Sort":"3"},
-			{"ID":339,"Content":"y","Finished":"0","Sort":"4"}
+			{"ID":340,"Content":"Make a new post about...","Finished":"1","Sort":"0"},
+			{"ID":334,"Content":"Proof read the new post.","Finished":"0","Sort":"1"},
+			{"ID":335,"Content":"Publish the new post.","Finished":"0","Sort":"2"},
+			{"ID":338,"Content":"Make research for tomorrow's post.","Finished":"0","Sort":"3"},
+			{"ID":339,"Content":"Take the day off.","Finished":"1","Sort":"4"}
 		]
 	}
 }
