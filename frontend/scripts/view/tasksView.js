@@ -19,7 +19,7 @@ const showTask = (task) => {
 	return `
 		<li class="todo__task ${taskFinished ? 'todo__task--complete' : ''}" data-id="${task.ID}">
 			<div class="todo__task-action">
-				<input class="${elementStrings.complete}" data-id="${task.ID}" type="checkbox" id="task-${task.ID}" ${taskFinished ? 'checked' : ''}>
+				<input class="${elementStrings.completeCheckbox}" data-id="${task.ID}" type="checkbox" id="task-${task.ID}" ${taskFinished ? 'checked' : ''}>
 				<label class="todo__hidden" for="task-${task.ID}">${taskFinished ? 'Deselect the completed task:' : 'Mark it as done:'} ${task.Content}</label>
 			</div>
 			<h2 class="todo__task-name">${task.Content}</h2>

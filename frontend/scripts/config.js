@@ -4,7 +4,7 @@ const elements = {
 	addInput: document.querySelector('.todo__task-input'),
 };
 const elementStrings = {
-	complete: 'todo__task-checkbox',
+	completeCheckbox: 'todo__task-checkbox',
 	delBtn: 'todo__del-btn',
 	addBtn: 'todo__add-btn',
 	taskComplete: 'todo__task--complete'

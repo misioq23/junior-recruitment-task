@@ -12,7 +12,7 @@ elements.todoList.addEventListener('click', (event) => {
 		const idTaskNumber = event.target.dataset.id;
 		deleteTaskControl(idTaskNumber);
 
-	} else if (clickedClass.contains(elementStrings.complete)) {
+	} else if (clickedClass.contains(elementStrings.completeCheckbox)) {
 		// toggle complete task method
 		completeTaskControl(event.target.dataset.id, event.target.checked);
 	}
