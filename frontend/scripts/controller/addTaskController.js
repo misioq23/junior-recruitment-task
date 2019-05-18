@@ -13,13 +13,12 @@ const addTaskControl = async (taskName) => {
 			Sort: `${document.querySelectorAll('.todo__task').length}`
 		};
 
-		state.task = new AddTask(newTask, `${setup.proxy}${setup.dataBaseUrl}`);
+		state.task = new AddTask(newTask, setup.URL);
 		try {
 			// 1) Post data on serv
 			await state.task.postTask();
 			// 2) Print data on screen
 			newTask.ID = state.task.response.ID;
-			console.log(newTask);
 			renderTasks([newTask]);
 
 		} catch (err) {

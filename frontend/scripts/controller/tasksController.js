@@ -5,7 +5,7 @@ import { setup } from '../config';
 const state = {};
 
 const tasksControl = async () => {
-	state.tasks = new Tasks(`${setup.proxy}${setup.dataBaseUrl}`);
+	state.tasks = new Tasks(setup.URL);
 
 	try {
 		// 1) Clear UI

@@ -11,6 +11,7 @@ const elementStrings = {
 
 const setup = {
 	proxy: 'https://cors-anywhere.herokuapp.com/',
-	dataBaseUrl: 'http://localhost:3000',
+	dataBaseUrl: 'https://qunabu.com/api',
 };
+setup.URL = `${setup.proxy}${setup.dataBaseUrl}`;
 export { elements, elementStrings, setup };
