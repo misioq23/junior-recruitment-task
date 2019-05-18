@@ -1,9 +1,15 @@
 import { elementStrings, elements } from '../config';
+
 // Function clears every element inside todo__list
 const clearList = () => {
 	const range = document.createRange();
 	range.selectNodeContents(elements.todoList);
 	range.deleteContents();
+};
+
+// Function to delete only one task
+const deleteTask = (id) => {
+	document.querySelector(`[data-id="${id}"]`).remove();
 };
 
 // Function returns markup of one todo__task
@@ -17,7 +23,7 @@ const showTask = (task) => {
 				<label class="todo__hidden" for="task-${task.ID}">${taskFinished ? 'Deselect the completed task:' : 'Mark it as done:'} ${task.Content}</label>
 			</div>
 			<h2 class="todo__task-name">${task.Content}</h2>
-			<button class="${elementStrings.delBtn}" ${taskFinished ? 'disabled' : ''}>
+			<button class="${elementStrings.delBtn}" data-id="${task.ID}" ${taskFinished ? 'disabled' : ''}>
 				<span class="todo__hidden">Delete: ${task.Content}</span>
 			</button>
 		</li>`;
@@ -29,4 +35,4 @@ const renderTasks = (tasks) => {
 	elements.todoList.insertAdjacentHTML('beforeend', markup);
 };
 
-export { renderTasks, clearList };
+export { renderTasks, clearList, deleteTask };
