@@ -14,8 +14,8 @@ const deleteTask = (id) => {
 
 // Function returns markup of one todo__task
 const showTask = (task) => {
-	// changes Finished string into boolean
-	const taskFinished = task.Finished !== '0' ? true : false;
+	// changes Finished string into number (can be read like boolean)
+	const taskFinished = parseInt(task.Finished);
 	return `
 		<li class="todo__task ${taskFinished ? 'todo__task--complete' : ''}" data-id="${task.ID}">
 			<div class="todo__task-action">
