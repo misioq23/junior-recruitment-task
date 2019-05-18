@@ -7,6 +7,7 @@ const elementStrings = {
 	complete: 'todo__task-checkbox',
 	delBtn: 'todo__del-btn',
 	addBtn: 'todo__add-btn',
+	taskComplete: 'todo__task--complete'
 };
 
 const setup = {

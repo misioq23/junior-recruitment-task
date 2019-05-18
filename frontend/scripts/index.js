@@ -2,6 +2,7 @@ import { elements, elementStrings } from './config';
 import tasksControl from './controller/tasksController';
 import addTaskControl from './controller/addTaskController';
 import deleteTaskControl from './controller/deleteTaskController';
+import completeTaskControl from './controller/completeTaskController';
 tasksControl();
 elements.todoList.addEventListener('click', (event) => {
 	const clickedClass = event.target.classList;
@@ -10,8 +11,10 @@ elements.todoList.addEventListener('click', (event) => {
 		// delete task method
 		const idTaskNumber = event.target.dataset.id;
 		deleteTaskControl(idTaskNumber);
+
 	} else if (clickedClass.contains(elementStrings.complete)) {
 		// toggle complete task method
+		completeTaskControl(event.target.dataset.id, event.target.checked);
 	}
 });
 
