@@ -20,12 +20,18 @@
 	&::after{
 		left: $second-line--width;
 	}
+	&:valid .todo__add-btn{
+		cursor: pointer;
+	}
+	&:valid .todo__btn-img{
+		fill: $todo__task--text-active;
+	}
 }
 
 .todo__add-btn {
 	// To make sure the btn's width and height will be the same like lists 
 	padding: $headers__padding + ($font--size - $action__elements--size)/2;
-	cursor: pointer;
+	cursor: not-allowed;
 }
 
 .todo__btn-img {
@@ -34,10 +40,6 @@
 	width: $action__elements--size;
 	height: $action__elements--size;
 	fill: $todo__task--text-inactive;
-}
-
-.todo__add-img--valid {
-	fill: $todo__task--text-active;
 }
 
 .todo__new-task {
