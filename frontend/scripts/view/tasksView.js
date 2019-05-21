@@ -56,11 +56,14 @@ const renderTasks = (tasks) => {
  * @return {undefined}
  */
 const toggleCompleteUI = (taskID, isChecked) => {
-	document.querySelector(`[data-id="${taskID}"]`).classList.toggle(elementStrings.taskComplete);
+	const checkedTask = document.querySelector(`[data-id="${taskID}"]`);
+	const clickedDeleteBtn = document.querySelector(`button[data-id="${taskID}"]`);
+
+	checkedTask.classList.toggle(elementStrings.taskComplete);
 	if (isChecked) {
-		document.querySelector(`button[data-id="${taskID}"]`).setAttribute('disabled', '');
+		clickedDeleteBtn.setAttribute('disabled', '');
 	} else {
-		document.querySelector(`button[data-id="${taskID}"]`).removeAttribute('disabled');
+		clickedDeleteBtn.removeAttribute('disabled');
 	}
 };
 
