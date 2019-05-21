@@ -5,8 +5,11 @@ import { setup } from '../config';
 const state = {};
 
 const completeTaskControl = async (taskID, isTaskChecked) => {
+	const updatedData = {
+		Finished: isTaskChecked ? '1' : '0'
+	};
 
-	state.task = new CompleteTask(taskID, isTaskChecked, setup.URL);
+	state.task = new CompleteTask(taskID, updatedData, setup.URL);
 
 	try {
 		// 1) Toggle .todo__task--complete

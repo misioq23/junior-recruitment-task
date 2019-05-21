@@ -1,13 +1,13 @@
 /**
  * Model to change task's finished value in database
  * @param {string} id id of the task to be edited
- * @param {boolean} isChecked whether task is completed
+ * @param {object} data object with updated data
  * @param {string} address database URL
  */
 class CompleteTask {
-	constructor(id, isChecked, address) {
+	constructor(id, data, address) {
 		this.id = parseInt(id);
-		this.finished = JSON.stringify({ Finished: isChecked ? '1' : '0' });
+		this.finished = JSON.stringify(data);
 		this.address = address;
 		this.category = 'todo';
 	}
