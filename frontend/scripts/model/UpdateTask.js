@@ -4,7 +4,7 @@
  * @param {object} data object with updated data
  * @param {string} address database URL
  */
-class CompleteTask {
+class UpdateTask {
 	constructor(id, update, address) {
 		this.id = parseInt(id);
 		this.update = JSON.stringify(update);
@@ -16,7 +16,7 @@ class CompleteTask {
 	 * Updates task in database
 	 * @returns {Promise<object>} promise with updated object
 	 */
-	toggleComplete() {
+	updateTask() {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
 
@@ -36,4 +36,4 @@ class CompleteTask {
 		});
 	};
 };
-export default CompleteTask;
+export default UpdateTask;

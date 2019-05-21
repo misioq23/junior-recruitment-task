@@ -15,7 +15,7 @@ const completeTaskControl = async (taskID, isTaskChecked) => {
 		// 1) Toggle .todo__task--complete
 		toggleCompleteUI(taskID, isTaskChecked);
 		// 2) Change complete in database
-		await state.task.toggleComplete();
+		await state.task.updateTask();
 	} catch (err) {
 		console.log(`Task cannot change complete state: ${err}`);
 	}
