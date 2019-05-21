@@ -1,4 +1,4 @@
-import CompleteTask from '../model/CompleteTask';
+import UpdateTask from '../model/UpdateTask';
 import { toggleCompleteUI } from '../view/tasksView';
 import { setup } from '../config';
 
@@ -9,7 +9,7 @@ const completeTaskControl = async (taskID, isTaskChecked) => {
 		Finished: isTaskChecked ? '1' : '0'
 	};
 
-	state.task = new CompleteTask(taskID, updatedData, setup.URL);
+	state.task = new UpdateTask(taskID, updatedData, setup.URL);
 
 	try {
 		// 1) Toggle .todo__task--complete

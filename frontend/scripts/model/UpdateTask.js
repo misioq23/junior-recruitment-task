@@ -1,19 +1,19 @@
 /**
- * Model to change task's finished value in database
+ * Model to update task data by update object
  * @param {string} id id of the task to be edited
  * @param {object} data object with updated data
  * @param {string} address database URL
  */
 class CompleteTask {
-	constructor(id, data, address) {
+	constructor(id, update, address) {
 		this.id = parseInt(id);
-		this.finished = JSON.stringify(data);
+		this.update = JSON.stringify(update);
 		this.address = address;
 		this.category = 'todo';
 	}
 
 	/**
-	 * Overwrites task.Finished value in database
+	 * Updates task in database
 	 * @returns {Promise<object>} promise with updated object
 	 */
 	toggleComplete() {
@@ -32,7 +32,7 @@ class CompleteTask {
 				}
 			});
 
-			xhr.send(this.finished);
+			xhr.send(this.update);
 		});
 	};
 };
