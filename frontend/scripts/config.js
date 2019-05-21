@@ -9,10 +9,15 @@ const elementStrings = {
 	addBtn: 'todo__add-btn',
 	taskComplete: 'todo__task--complete'
 };
-
+const API = {
+	id: 'ID',
+	finished: 'Finished',
+	content: 'Content',
+	sort: 'Sort'
+};
 const setup = {
 	proxy: 'https://cors-anywhere.herokuapp.com/',
 	dataBaseUrl: 'https://qunabu.com/api',
 };
 setup.URL = `${setup.proxy}${setup.dataBaseUrl}`;
-export { elements, elementStrings, setup };
+export { elements, elementStrings, API, setup };
