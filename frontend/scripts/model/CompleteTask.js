@@ -1,3 +1,9 @@
+/**
+ * Model to change task's finished value in database
+ * @param {string} id id of the task to be edited
+ * @param {boolean} isChecked whether task is completed
+ * @param {string} address database URL
+ */
 class CompleteTask {
 	constructor(id, isChecked, address) {
 		this.id = parseInt(id);
@@ -6,6 +12,10 @@ class CompleteTask {
 		this.category = 'todo';
 	}
 
+	/**
+	 * Overwrites task.Finished value in database
+	 * @returns {Promise<object>} promise with updated object
+	 */
 	toggleComplete() {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
@@ -15,7 +25,6 @@ class CompleteTask {
 
 			xhr.addEventListener('load', () => {
 				if (xhr.status === 200) {
-					// response with updated task
 					const response = JSON.parse(xhr.responseText);
 					resolve(this.response = response);
 				} else {

@@ -1,11 +1,17 @@
-// Model to get object with all todos tasks
+/**
+ * Model to get array from database with all todo tasks
+ * @param {string} address database URL
+ */
 class Tasks {
 	constructor(address) {
-		// URL of database
 		this.address = address;
 		this.category = 'todos';
 	}
-	// Method returns Promise with JSON parsed data object or Error
+
+	/**
+	 * Returns from database array with all todo tasks
+	 * @returns {Promise<array>} promise with the todo tasks array
+	 */
 	getTasks() {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
