@@ -16,7 +16,7 @@ const tasksControl = async () => {
 		renderTasks(state.tasks.result.todos);
 
 	} catch (err) {
-		console.log(`Tasks can't render: ${err}`);
+		console.log(`Tasks can't be rendered: ${err}`);
 	}
 };
 
