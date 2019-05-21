@@ -1,6 +1,6 @@
 import DeleteTask from '../model/DeleteTask';
-import { setup } from '../config';
 import { deleteTask } from '../view/tasksView';
+import { setup } from '../config';
 
 const state = {};
 
