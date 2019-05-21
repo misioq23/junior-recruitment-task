@@ -18,7 +18,7 @@ elements.todoList.addEventListener('click', (event) => {
 	}
 });
 
-elements.addBtn.addEventListener('click', (event) => {
+elements.addBtn.addEventListener('click', () => {
 	// add task method
 	addTaskControl(elements.addInput.value);
 	elements.addInput.value = '';
