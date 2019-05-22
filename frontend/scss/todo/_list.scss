@@ -41,7 +41,7 @@
 }
 
 .todo__task-action {
-	width: $first-line--width;
+	min-width: $first-line--width;
 	text-align: center;
 }
 
