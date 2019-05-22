@@ -1,5 +1,5 @@
 import AddTask from '../model/AddTask';
-import { renderTasks } from '../view/tasksView';
+import { renderTasks, clearAddForm } from '../view/tasksView';
 import { setup, API } from '../config';
 
 const state = {};
@@ -20,6 +20,8 @@ const addTaskControl = async (taskName) => {
 			// 2) Print data on screen
 			newTask[API.id] = state.task.response[API.id];
 			renderTasks([newTask]);
+
+			clearAddForm();
 
 		} catch (err) {
 			console.log(`Cannot add task: ${err}`);

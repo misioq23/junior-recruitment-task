@@ -18,8 +18,8 @@ elements.todoList.addEventListener('click', (event) => {
 	}
 });
 
-elements.addBtn.addEventListener('click', () => {
+elements.addBtn.addEventListener('click', (event) => {
+	event.preventDefault();
 	// add task method
 	addTaskControl(elements.addInput.value);
-	elements.addInput.value = '';
 });
