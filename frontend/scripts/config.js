@@ -1,4 +1,5 @@
 const elements = {
+	todo: document.querySelector('.todo'),
 	todoList: document.querySelector('.todo__list'),
 	addBtn: document.querySelector('.todo__add-btn'),
 	addInput: document.querySelector('.todo__task-input'),
