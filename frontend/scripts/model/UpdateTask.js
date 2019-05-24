@@ -17,7 +17,7 @@ class UpdateTask {
 	 */
 	updateTask(id, update) {
 		return new Promise((resolve, reject) => {
-			this.id = parseInt(id);
+			this.id = id;
 			this.update = JSON.stringify(update);
 
 			const xhr = new XMLHttpRequest();

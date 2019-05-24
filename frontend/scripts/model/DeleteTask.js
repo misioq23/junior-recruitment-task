@@ -16,7 +16,7 @@ class DeleteTask {
 	 */
 	deleteTask(id) {
 		return new Promise((resolve, reject) => {
-			this.id = parseInt(id);
+			this.id = id;
 			const xhr = new XMLHttpRequest();
 
 			xhr.open('DELETE', `${this.address}/${this.category}/${this.id}`, true);
