@@ -4,7 +4,7 @@ import { elements, elementStrings } from '../config';
  * @returns {Object} methods
  */
 const CreateInputValidator = function() {
-	const scriptPattern = /[<^>]*script/g;
+	const scriptPattern = /<[^>]*>/g;
 	const state = {
 		error: '',
 		isPopupActive: false
@@ -57,7 +57,7 @@ const CreateInputValidator = function() {
 		},
 
 		/**
-		 * Input validator. Validates: 1) non empty string 2) non script
+		 * Input validator. Validates: 1) non empty string 2) no html tags
 		 * @instance
 		 * @method validate
 		 * @memberof CreateInputValidator
@@ -76,7 +76,7 @@ const CreateInputValidator = function() {
 
 			if (response.taskContent.match(scriptPattern)) {
 				response.isTaskValid = false;
-				response.errorContent = 'You cannot input script code';
+				response.errorContent = 'No html tags allowed';
 			}
 
 			return response;
