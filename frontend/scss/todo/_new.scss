@@ -32,7 +32,9 @@
 .todo__add-btn {
 	// To make sure the btn's width and height will be the same like lists 
 	padding: $headers__padding + ($font--size - $action__elements--size)/2;
-	pointer-events: none;
+	& svg {
+		pointer-events: none;
+	}
 }
 
 .todo__btn-img {
