@@ -5,7 +5,10 @@ import { setup, API } from '../config';
 
 const state = {};
 const inputValidator = createInputValidator();
-
+/**
+ * Controller responsible for creating and adding new tasks
+ * @return {undefined}
+ */
 const addTaskControl = async () => {
 
 	const taskInput = inputValidator.validate();

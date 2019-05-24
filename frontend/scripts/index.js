@@ -6,6 +6,10 @@ import completeTaskControl from './controller/completeTaskController';
 
 tasksControl();
 
+/**
+ * Main eventListener controller for finishing, deleting and adding tasks
+ * @return {undefined}
+ */
 elements.todo.addEventListener('click', (event) => {
 	const clickedClass = event.target.classList;
 
