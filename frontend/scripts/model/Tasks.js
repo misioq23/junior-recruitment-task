@@ -1,5 +1,6 @@
 /**
  * Model to get array from database with all todo tasks
+ * @class
  * @param {string} address database URL
  */
 class Tasks {

@@ -1,20 +1,20 @@
 /**
  * Model to add a task to the database
- * @param {object} data task object
+ * @class
  * @param {string} address database URL
  */
 class AddTask {
-	constructor(data, address) {
-		this.data = JSON.stringify(data);
+	constructor(address) {
 		this.address = address;
 		this.category = 'todos';
 	}
 
 	/**
 	 * Sends task Object to database and returns ID number
-	 * @returns {Promise<number>} promise with the assigned id number to the task
+	 * @param {object} data task object
+	 * @return {Promise<number>} promise with the assigned id number to the task
 	 */
-	postTask() {
+	postTask(data) {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
 
@@ -30,6 +30,7 @@ class AddTask {
 				}
 			});
 
+			this.data = JSON.stringify(data);
 			xhr.send(this.data);
 		});
 	};

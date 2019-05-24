@@ -9,13 +9,13 @@ const completeTaskControl = async (taskID, isTaskChecked) => {
 		[API.finished]: isTaskChecked ? '1' : '0'
 	};
 
-	state.task = new UpdateTask(taskID, updatedData, setup.URL);
+	state.task = new UpdateTask(setup.URL);
 
 	try {
 		// 1) Toggle .todo__task--complete
 		toggleCompleteUI(taskID, isTaskChecked);
 		// 2) Change complete in database
-		await state.task.updateTask();
+		await state.task.updateTask(taskID, updatedData);
 	} catch (err) {
 		console.log(`Task cannot change complete state: ${err}`);
 	}

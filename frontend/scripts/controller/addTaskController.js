@@ -18,10 +18,10 @@ const addTaskControl = async () => {
 			[API.sort]: `${document.querySelectorAll('.todo__task').length}`
 		};
 
-		state.task = new AddTask(newTask, setup.URL);
+		state.task = new AddTask(setup.URL);
 		try {
 			// 1) Post data on serv
-			await state.task.postTask();
+			await state.task.postTask(newTask);
 			// 2) Print data on screen
 			newTask[API.id] = state.task.response[API.id];
 			renderTasks([newTask]);

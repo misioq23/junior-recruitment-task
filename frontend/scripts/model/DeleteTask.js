@@ -1,21 +1,22 @@
 /**
- * Model to delete task from database
- * @param {string} id id of the task to be deleted from database
+ * Model to delete task from database.
+ * @class
  * @param {string} address database URL
  */
 class DeleteTask {
-	constructor(id, address) {
-		this.id = parseInt(id);
+	constructor(address) {
 		this.address = address;
 		this.category = 'todo';
 	}
 
 	/**
 	 * Removes task Object from database
-	 * @returns {Promise} promise
+	 * @param {string} id id of the task to be deleted from database
+	 * @return {Promise} promise
 	 */
-	deleteTask() {
+	deleteTask(id) {
 		return new Promise((resolve, reject) => {
+			this.id = parseInt(id);
 			const xhr = new XMLHttpRequest();
 
 			xhr.open('DELETE', `${this.address}/${this.category}/${this.id}`, true);

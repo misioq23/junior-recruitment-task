@@ -8,10 +8,10 @@ const deleteTaskControl = async (taskID) => {
 	// Validate taskID
 	if (taskID) {
 
-		state.task = new DeleteTask(taskID, setup.URL);
+		state.task = new DeleteTask(setup.URL);
 		try {
 			// 1) Delete task
-			await state.task.deleteTask();
+			await state.task.deleteTask(taskID);
 			deleteTask(taskID);
 		} catch (err) {
 			console.log(`Cannot delete task: ${err}`);
