@@ -1,16 +1,6 @@
 import { elements, elementStrings, API } from '../config';
 
 /**
- * Removes content and focus from new task input and add button
- * @return {undefined}
- */
-const clearAddForm = () => {
-	elements.addInput.value = '';
-	elements.addInput.blur();
-	elements.addBtn.blur();
-};
-
-/**
  * Removes all tasks from DOM
  * @return {undefined}
  */
@@ -77,4 +67,4 @@ const toggleCompleteUI = (taskID, isChecked) => {
 	}
 };
 
-export { clearAddForm, clearList, deleteTask, renderTasks, toggleCompleteUI };
+export { clearList, deleteTask, renderTasks, toggleCompleteUI };

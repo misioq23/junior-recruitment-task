@@ -1,0 +1,38 @@
+.popup {
+	position: absolute;
+	top: 125%;
+}
+
+.popup__wrapper {
+	position: relative;
+	padding: .5em 2em;
+	background: white;
+	border-radius: 1em;
+	
+	$arrow__width: .75em;
+	$arrow__height: .5em;
+	&::before,
+	&::after {
+		position: absolute;
+		top: -$arrow__height;
+		width: 50%;
+		height: 0;
+		border-top: $arrow__height solid transparent;
+		content: '';
+	}
+	&::before {
+		left: 0;
+		border-right: $arrow__width solid white;
+	}
+	&::after {
+		border-left: $arrow__width solid white;
+		right: 0;
+	}
+}
+
+.popup__content {
+	position: relative;
+	color: $todo__task--text-active;
+	font-weight: 700;
+	text-align: center;
+}

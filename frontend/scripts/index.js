@@ -22,6 +22,6 @@ elements.todo.addEventListener('click', (event) => {
 	// add task
 	if (clickedClass.contains(elementStrings.addBtn)) {
 		event.preventDefault();
-		addTaskControl(elements.addInput.value);
+		addTaskControl();
 	}
 });

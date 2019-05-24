@@ -1,14 +1,19 @@
 import AddTask from '../model/AddTask';
-import { renderTasks, clearAddForm } from '../view/tasksView';
+import createInputValidator from '../view/inputValidator';
+import { renderTasks } from '../view/tasksView';
 import { setup, API } from '../config';
 
 const state = {};
+const inputValidator = createInputValidator();
 
-const addTaskControl = async (taskName) => {
-	// Validate taskName
-	if (taskName) {
+const addTaskControl = async () => {
+
+	const taskInput = inputValidator.validate();
+
+	if (taskInput.isTaskValid) {
+		inputValidator.clearAddForm();
 		const newTask = {
-			[API.content]: taskName,
+			[API.content]: taskInput.taskContent,
 			[API.finished]: '0',
 			[API.sort]: `${document.querySelectorAll('.todo__task').length}`
 		};
@@ -21,13 +26,11 @@ const addTaskControl = async (taskName) => {
 			newTask[API.id] = state.task.response[API.id];
 			renderTasks([newTask]);
 
-			clearAddForm();
-
 		} catch (err) {
 			console.log(`Cannot add task: ${err}`);
 		}
 	} else {
-		alert('Field cannot be empty!');
+		inputValidator.showError(taskInput.errorContent);
 	}
 
 };
