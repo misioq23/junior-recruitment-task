@@ -1,6 +1,6 @@
 import AddTask from '../model/AddTask';
 import createInputValidator from '../view/inputValidator';
-import { renderTasks } from '../view/tasksView';
+import { renderTasks, getSortNumber } from '../view/tasksView';
 import { setup, API } from '../config';
 
 const state = {};
@@ -12,18 +12,20 @@ const addTaskControl = async () => {
 
 	if (taskInput.isTaskValid) {
 		inputValidator.clearAddForm();
+
 		const newTask = {
 			[API.content]: taskInput.taskContent,
-			[API.finished]: '0',
-			[API.sort]: `${document.querySelectorAll('.todo__task').length}`
+			[API.finished]: false,
+			[API.sort]: getSortNumber()
 		};
 
 		state.task = new AddTask(setup.URL);
 		try {
-			// 1) Post data on serv
+			// Posts task on serv
 			await state.task.postTask(newTask);
-			// 2) Print data on screen
+			// Adds just granted id number to newTask object
 			newTask[API.id] = state.task.response[API.id];
+			// Prints new task on screen
 			renderTasks([newTask]);
 
 		} catch (err) {

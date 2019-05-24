@@ -24,10 +24,10 @@ const deleteTask = (taskID) => {
  * @param {object} task object
  * @return {string} task's markup
  */
-const makeTaskMarkup = (task) => {
-	const taskFinished = parseInt(task.Finished);
+const _makeTaskMarkup = (task) => {
+	const taskFinished = parseInt(task.Finished, 10);
 	return `
-		<li class="todo__task ${taskFinished ? 'todo__task--complete' : ''}" data-id="${task[API.id]}">
+		<li class="todo__task ${taskFinished ? 'todo__task--complete' : ''}" data-id="${task[API.id]}" data-sort="${task[API.sort]}">
 			<div class="todo__task-action">
 				<input class="${elementStrings.completeCheckbox}" data-id="${task[API.id]}" type="checkbox" id="task-${task[API.id]}" ${taskFinished ? 'checked' : ''}>
 				<label class="todo__hidden" for="task-${task[API.id]}">${taskFinished ? 'Deselect the completed task:' : 'Mark it as done:'} ${task[API.content]}</label>
@@ -45,7 +45,7 @@ const makeTaskMarkup = (task) => {
  * @return {undefined}
  */
 const renderTasks = (tasks) => {
-	const markup = tasks.map(makeTaskMarkup).join(' ');
+	const markup = tasks.map(_makeTaskMarkup).join(' ');
 	elements.todoList.insertAdjacentHTML('beforeend', markup);
 };
 
@@ -67,4 +67,20 @@ const toggleCompleteUI = (taskID, isChecked) => {
 	}
 };
 
-export { clearList, deleteTask, renderTasks, toggleCompleteUI };
+/**
+ * Checks last task sort number and increments it for next task
+ * @return {number} sort number for new task
+ */
+const getSortNumber = () => {
+	const tasks = document.querySelectorAll(`.${elementStrings.todoTask}`);
+	const lastTaskNumber = tasks.length;
+	// if there's no tasks return 1
+	if (!lastTaskNumber) {
+		return 1;
+	}
+	const lastTaskSortNumber = parseInt(tasks[lastTaskNumber - 1].dataset.sort, 10);
+	return lastTaskSortNumber + 1;
+
+};
+
+export { clearList, deleteTask, renderTasks, toggleCompleteUI, getSortNumber };
