@@ -23,7 +23,9 @@ const API = {
 };
 const setup = {
 	proxy: 'https://cors-anywhere.herokuapp.com/',
-	dataBaseUrl: 'https://qunabu.com/api',
+	dataBaseUrl: 'http://localhost:3000/api',
+	dataQunabuUrl: 'https://qunabu.com/api'
 };
-setup.URL = `${setup.proxy}${setup.dataBaseUrl}`;
+// Qunabu database: `${setup.proxy}${setup.dataQunabuUrl}`
+setup.URL = `${setup.dataBaseUrl}`;
 export { elements, elementStrings, API, setup };

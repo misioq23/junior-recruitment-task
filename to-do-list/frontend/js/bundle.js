@@ -26,9 +26,11 @@
 	};
 	const setup = {
 	  proxy: 'https://cors-anywhere.herokuapp.com/',
-	  dataBaseUrl: 'https://qunabu.com/api'
-	};
-	setup.URL = `${setup.proxy}${setup.dataBaseUrl}`;
+	  dataBaseUrl: 'http://localhost:3000/api',
+	  dataQunabuUrl: 'https://qunabu.com/api'
+	}; // Qunabu database: `${setup.proxy}${setup.dataQunabuUrl}`
+
+	setup.URL = `${setup.dataBaseUrl}`;
 
 	/**
 	 * Model to get array from database with all todo tasks
