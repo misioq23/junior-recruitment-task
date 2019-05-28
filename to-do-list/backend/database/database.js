@@ -18,11 +18,6 @@ const db = new sqlite3.Database(dbSource, (err) => {
 			(err) => {
 				if (err) {
 					// Table already created
-				} else {
-					// Table just created, creating some rows
-					const insert = 'INSERT INTO todo (Content, Finished, Sort) VALUES (?,?,?)';
-					db.run(insert, ['First task', 0, 1]);
-					db.run(insert, ['Second task', 0, 2]);
 				}
 			});
 	}
