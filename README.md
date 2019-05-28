@@ -1,3 +1,21 @@
+# Usage
+1) Clone repo
+```sh
+git clone https://github.com/misioq23/junior-recruitment-task.git
+```
+2) Change dir
+```sh
+cd to-do-list
+```
+3) install dependencies
+```sh
+npm install
+```
+4) start express server
+```sh
+npm start
+```
+
 # Zadanie dla Junior Developera
 
 Realizacja prostej listy ToDo (lista zadań do zrobienia) jako aplikacji internetowej, z wykorzystaniem HTML5 po stronie frontendu i dowolnej technologi po stronie backendu. Aplikacja umożliwia dodawanie, przeglądanie i oznaczanie jako wykonane różnych zadań.
