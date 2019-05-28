@@ -1,7 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const open = require('open');
 const db = require('./database/database.js');
 const app = express();
+
+// opens the url in the default browser 
+open('http://localhost:3000/to-do-list/');
 
 app.use(bodyParser.json());
 app.use('/to-do-list', express.static('frontend'));

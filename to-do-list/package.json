@@ -4,12 +4,13 @@
   "description": "",
   "main": "backend/server.js",
   "scripts": {
-     "start": "node backend/server.js"
+    "start": "node backend/server.js"
   },
   "author": "misioq23",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "open": "^6.3.0",
     "sqlite3": "^4.0.8"
   }
 }
