@@ -47,21 +47,22 @@ app.post('/api/todos', (req, res) => {
 	const sql = 'insert into todo (Content, Finished, Sort) values (?,?,?)';
 	const params = [req.body.Content, req.body.Finished, req.body.Sort];
 
-	db.run(sql, params, (err, result) => {
+	db.run(sql, params, function(err, result) {
+
 		if (err) {
 			res.status(400).json({ 'error': err.message });
 			return;
 		}
 		res.json({
 			'message': 'success',
-			'id': this.lastID
+			'ID': this.lastID
 		})
 	});
 });
 
 // Delete task
 app.delete('/api/todo/:id', (req, res, next) => {
-	db.run('DELETE FROM todo WHERE id = ?', req.params.id, (err, result) => {
+	db.run('DELETE FROM todo WHERE id = ?', req.params.id, function(err, result) {
 		if (err) {
 			res.status(400).json({ 'error': res.message });
 			return;
@@ -78,7 +79,7 @@ app.patch('/api/todo/:id', (req, res, next) => {
 		Sort: req.body.Sort ? req.body.Sort : null
 	};
 	db.run('UPDATE todo SET Content = COALESCE(?,Content), Finished = COALESCE(?,Finished), Sort = COALESCE(?,Sort) WHERE id = ?',
-		[data.Content, data.Finished, data.Sort, req.params.id], (err, result) => {
+		[data.Content, data.Finished, data.Sort, req.params.id], function(err, result) {
 			if (err) {
 				res.status(400).json({ 'error': res.message });
 				return;
